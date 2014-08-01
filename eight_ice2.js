@@ -62,6 +62,11 @@
           if(nnou(this.email)) {
             vcard.push('EMAIL;TYPE=WORK;TYPE=INTERNET:'+this.email);
           }
+	//ICE ADD start
+          if(nnou(this.address)) {
+            vcard.push('ADDRESS;TYPE=WORK;TYPE=INTERNET:'+this.address);
+          }
+	//ICE ADD through
           vcard.push('PRODID:-//Noriaki Uchiyama//vCards Converter for Eight//JA');
           vcard.push('REV:'+utc_datetime());
           vcard.push('END:VCARD');
@@ -160,7 +165,7 @@
       function after_display() {}
       function after_perform() {
         //console.info('end');
-        $('#__eight_export span').text('done')
+        $('#__eight_export span').text('finished')
           .find('img').remove();
       }
 
